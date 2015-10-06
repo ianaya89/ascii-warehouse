@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Ascii Warehouse</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-app="ascii-warehouse">
+    <div id="wrapper" ng-controller="MainCtrl as main" scroll='main.unQueueProducts()' class="ng-cloak">
+
+        <header>
+            <h1>Discount Ascii Warehouse</h1>
+            <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
+        </header>
+
+        <section class="products">
+            <div class="header" ng-show="main.products && main.products.length">
+                <div class="row">
+                    <div class="col pointer" ng-class="{'active': main.isActive('id')}" ng-click="main.sortProducts('id')">ID</div>
+                    <div class="col pointer" ng-class="{'active': main.isActive('size')}" ng-click="main.sortProducts('size')">Size</div>
+                    <div class="col pointer" ng-class="{'active': main.isActive('price')}" ng-click="main.sortProducts('price')">Price</div>
+                    <div class="col">Date</div>
+                    <div class="col">Face</div>
+                </div>
+            </div>
+
+            <div class="body" ng-repeat="product in main.products">
+                <div class="row">
+                    <div class="col"><b>{{product.id}}</b></div>
+                    <div class="col">{{product.size}}</div>
+                    <div class="col">{{product.price | cents}}</div>
+                    <div class="col">{{product.date | date}}</div>
+                    <div class="col" ng-style="{'font-size': product.size + 'px'}">{{product.face}}</div>    
+                </div>
+                <aside ng-if="($index + 1) % 20 === 0" class="ad row">
+                    <img ng-src="{{main.ads[($index + 1) / 20]}}" alt="ad">
+                </aside>    
+            </div>
+            <div id="end">
+                <p ng-show="main.isEndOfList">
+                    ~ end of catalogue ~
+                </p>    
+            </div>
+            <spinner ng-show="main.isLoading"></spinner>
+
+        </section>
+
+    </div>
+
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/angular/angular.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/common/constants.js"></script>
+
+    <script src="js/services/product.js"></script>
+    <script src="js/services/ad.js"></script>
+
+    <script src="js/directives/scroll.js"></script>
+    <script src="js/directives/spinner.js"></script>
+
+    <script src="js/filters/cents.js"></script>
+    <script src="js/filters/date.js"></script>
+
+    <script src="js/controllers/main.js"></script>
+</body>
+</html>

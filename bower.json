@@ -1,0 +1,21 @@
+{
+  "name": "discount-ascii-warehouse",
+  "main": "static/index.html",
+  "version": "0.0.1",
+  "authors": [
+    "Ignacio Anaya <ignacio.anaya89@gmail.com>"
+  ],
+  "description": "For all your ascii needs.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "jquery": "~2.1.4"
+  }
+}

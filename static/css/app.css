@@ -1,0 +1,86 @@
+body {
+  color: #3d3d3d;
+  background: #f3f3f3;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.body, .header {
+  display: table;         
+  width: 100%;
+}
+
+.header {
+  background: #ccc;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 3px solid #3d3d3d;
+}
+
+.body:nth-of-type(even) {
+  background: #ddd;
+}
+
+.body:nth-of-type(odd) {
+  background: #ccc;
+}
+
+.row {
+  display: table-row;
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.col {
+  float: left;
+  display: table-column;         
+  width: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+aside.ad {
+  text-align: center;
+  background: #f3f3f3;
+}
+
+aside.ad  img {
+  border-radius: 1px;
+  margin: 10px 0px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.active {
+  color: tomato;
+}
+
+.active::after {
+  content: " \2191";
+}
+
+#end {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-style: italic;
+  color: tomato;
+}
+
+svg path,
+svg rect {
+  fill: tomato;
+}
+
+#spinner {
+  text-align: center;
+  vertical-align: middle;
+}
